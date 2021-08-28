@@ -17,6 +17,9 @@ class IsUserOwnerOrGetAndPost(permissions.BasePermission):
             return True
         
         # change there own data only not others that case for that
+        '''
+            perfrom edit user by there own data, not other user data
+        '''
         if not request.user.is_anonymous:
             return request.user == obj
         
